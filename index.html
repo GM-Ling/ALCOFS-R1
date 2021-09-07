@@ -1,0 +1,420 @@
+---
+layout: default
+---
+<html>
+<head>
+<title>Alaska Coastal Ocean Forecast System - Regional (ALCOFS-R)</title>
+<style type="text/css" media="all">
+            /* h1, h2, h3 and p are in Times New Roman font */
+            h1, h2, h3, p, li {
+                font-family: "Times New Roman";
+            }
+
+figcaption {
+  color: black;
+  font-family: "Times New Roman";
+  text-align: center;
+}
+ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}
+ol {
+    counter-reset: list;
+}
+ol > li {
+    list-style: none;
+}
+ol > li:before {
+    content: counter(list) ") ";
+    counter-increment: list;
+}
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176779707-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176779707-1');
+</script>
+
+
+</head>
+<!-- The following is body -->
+<body>
+<h1 style="text-align:center">Alaska Coastal Ocean Forecast System - Regional (ALCOFS-R)</h1>
+<!--<h1 style="text-align:center">阿拉斯加风暴潮预测系统 (in Chinese)</h1>-->
+<!--<h1 style="text-align:center">アラスカ高潮予測システム (in Japanese)</h1>-->
+<p>DISCLAIMER: This model is under experimental development. The results should not be used for navigational purposes or emergency planning under any circumstances.
+Please do not duplicate and use the result figures from this website without permission.</p>
+<!--<h2>NOTES</h2>
+<p>Due to the GFS(https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs) products stopped providing the latest reanalysis data, the AKSSFS is now interrupted, we apologise for the inconvenience‎.</p>-->
+<h2>UPDATES</h2>
+<ul class = "a">
+<!-- <li>Updated on 05-05-2020: Due to there are not free cores today, the simulation results haven't been updated yet. </li> -->
+<!--<li>Updated on 05-15-2020: Due to the computer maintenance from May 15 to 17, during this period the forecast results will not be updated.</li>-->
+<li>Updated on 01-15-2021: Due to the computer maintenance from Jan. 15 to 17, during this period the forecast results will not be updated.</li>
+<li>Updated on 09-13-2020: A global forecast wave model using WW3 with IC4M2-IS1 is published on the section 8.</li>
+<li>Updated on 09-01-2020: Updated for using 1 hourly wind, pressure, ice forcing, previsouly using 3 hourly, and restarted SWAN+ADCIRC.</li>
+<li>Updated on 08-25-2020: Updated for adding the significant wave height forecast by using SWAN+ADCIRC with the IC4M2 method in SWAN.</li>
+<li>Updated on 08-07-2020: Updated to Version 2, daily forecast simulations just include 1 day hindcast and 5 day forecast.</li>
+<li>Updated on 06-13-2020: Updated the bathymetry by using <a href="https://www.gebco.net/data_and_products/gridded_bathymetry_data/" target="_blank">GEBCO2020</a>.</li>
+<li>Updated on 06-10-2020: ADCIRC Ver.55 is applied.</li>
+<!--<li>Updated on 05-08-2020: Achieved updating the animations automatically once per day at 09:00.</li>
+<li>Updated on 05-07-2020: Achieved updating comparison with the latest observational data of St. Michael station automatically.</li>
+<li>Updated on 05-02-2020: Achieved updating the simulation results of 4 stations (Red Dog Dock, Prudhoe Bay, Unalakleet, Nome) automatically once per day, 
+and the latest observed data retrieved from the 4 NOAA stations updated twice (11:00, 18:00) per day in this page.</li>-->
+<li>Established on 04-28-2020: Testing Version 1, hindcast for 13 days and forecast for 5 days every day.</li>
+</ul>
+<!--<p>NOTES: The animations (5, 6, 7, 8) and the maximum surface elevation image (9) in this page are updated manually for the present, might not be updated every day, but it is in plan to set up updating automatically for the future.</p> -->
+
+<h2>NOTES</h2>
+<p>The forecast system runs once a day, starts from 00:30, ends in around 07:00. The forecast animations are uploaded at 08:00, the water level figures are updated at 06:00, 12:00, 15:00, 18:00 for comparing with the latest observational data from NOAA stations. The time showing in the figures are in UTC.</p>
+
+<h2>1. GFS-FV3 wind speed (5 day forecast)</h2>
+<img src="v2-images/wind_speed_5days.gif"  alt="ws" class="inline"/>  
+
+<h2>2. GFS-FV3 atmospheric pressure (MSLET, Mean Sea Level Pressure) (5 day forecast)</h2>
+<img src="v2-images/pressure_5days.gif"  alt="pres" class="inline"/>  
+
+<h2>3. GFS-FV3 ice concentration (5 days forecast)</h2>
+<!--<p><a href="v2-images/icecon_zoomin_5days.gif" target="_blank">Zoom in coastal area ([-170 -155 55 71]) by clicking here or the following figure</a>
+<a  href="v2-images/icecon_zoomin_5days.gif"><img src="v2-images/icecon_5days.gif"/></a></p>-->
+<img src="v2-images/icecon_5days.gif"  alt="af" class="inline"/>
+
+
+<h2>4. ADCIRC surface water elevation (5 day forecast)</h2>
+<p>Animation, 2 hourly output. The simulation result in the animation apply ADCIRC with ice parameterization.</p>
+<!--<p><a href="images/eta_uv.gif" target="_blank">Zoom in coastal area to see the elevation and wind speed ([-180 -159 60 75]) by clicking here</a></p>-->
+<img src="v2-images/eta_5days.gif" alt="eta" class="inline"/>
+<p>The following animation is an enlarged view for the surface elevation and wind speed vectors.
+The figures for this animation were generated by <a href="https://ccht.ccee.ncsu.edu/figuregen-v-49/" target="_blank">FigureGen v.49</a>.</p>
+<img src="v2-images/eta_uv.gif" alt="eta" class="inline"/>
+<!--<img src="images/eta_giam80.gif" alt="eta" style="width:1000px;height:550px;"> -->
+
+<h2>5. Maximum ADCIRC surface elevation for the 5 day forecast period</h2>
+<!--<p><a href="v2-images/max_eta_wak.jpg" target="_blank">Zoom in coastal area ([-170 -155 55 71]) by clicking here or the following figure</a> -->
+<p>Zoom in by clicking the following locations:</p>
+<p>・<a href="v2-images/max_eta.jpg" target="_blank">Whole Domain</a>・<a href="v2-images/max_eta_wak.jpg" target="_blank">Western Alaska</a>・<a href="v2-images/maxe_CI_AK.jpg" target="_blank">Cook Inlet</a>・<a href="v2-images/maxe_NAK.jpg" target="_blank">Northern Alaska</a>・<a href="v2-images/maxe_IP_AK.jpg" target="_blank">Inside Passage</a></p>
+<!--<a  href="v2-images/max_eta_wak.jpg"><img src="v2-images/max_eta.jpg"/></a></p> -->
+<img src="v2-images/max_eta.jpg" width="1100" alt="hi" usemap="#mapname">
+<map name="mapname">
+    <area shape="rect" coords="360,300,512,120" href="v2-images/max_eta_wak.jpg" alt="Western Alaska">
+    <area shape="rect" coords="512,256,603,210" href="v2-images/maxe_CI_AK.jpg" alt="Cook Inlet">
+    <area shape="rect" coords="465,140,632,103" href="v2-images/maxe_NAK.jpg" alt="Northern Alaska">
+    <area shape="rect" coords="664,315,779,233" href="v2-images/maxe_IP_AK.jpg" alt="Inside Passage">
+</map>
+
+<h2>6. SWAN+ADCIRC significant wave height (5 day forecast)</h2>
+<p>The <a href="https://www7320.nrlssc.navy.mil/pubs/2019/rogers2-2019.pdf" target="_blank">IC4M2 method</a> (Collins and Rogers, 2017) is utilized in SWAN for activating a source term S<sub>ice</sub> to represent the dissipation of wave energy by sea ice. Some parameters setting for SWAN: time interval=3600s, MDC=36(number of meshes in &theta;-space), MSC=40(one less than the number of frequencies). For the IC4M2 parameter, we use C2=1.06e-3, C4=2.30e-2 according to Meylan et al. (2014), which is for the case of ice floes, mostly 10 to 25 m in diameter, in the marginal ice zone near Antarctica. (Further consideration may need to be done in the future work since we are handling different ice zone)</p>
+<img src="v2-images/significant_wave_height_5days.gif" alt="hs-swan" class="inline"/>
+
+<h2>7. SWAN+ADCIRC radiation stress gradient (5 day forecast)</h2>
+<img src="v2-images/radiation_stress_5days.gif" alt="RSG" class="inline"/>
+
+<h2>8. WW3 significant wave height (5 day forecast)</h2>
+This is a 5 day global wave forecast results by using <a href="https://polar.ncep.noaa.gov/waves/wavewatch/" target="_blank">WAVEWATCH III (WW3)</a> with GFS-FV3 wind and ice forcing. 
+In this global model, 0.25 degree structured grid (longitude: 0-360; latitude: -90-80.25) is generated by using <a href="https://github.com/NOAA-EMC/gridgen/" target="_blank">gridgen</a>, and the bathymetry is interpolated from GEBCO2020.
+WW3 model setup: PR3, LN1, NL1, BT1, DB1, MLIM, ST4, FL0, STAB0, UQ, IC4, IS1, REF0 (refered to <a href="https://polar.ncep.noaa.gov/waves/hindcasts/nopp-phase2.php" target="_blank">https://polar.ncep.noaa.gov/waves/hindcasts/nopp-phase2.php</a>, but here we applied the IC4M2 and IS1 to consider the sea ice effects).
+The purpose for this global forecasting model are to provide wave boundary conditions to the high resolution regional model, and to provide an image of the 5 day forecast global significant wave height.
+<p>Enlarged views are provided by clicking the following locations:</p>
+<p>・<a href="v2-images/hs_GL3_ww3_IC4M2_IS1_AK.gif" target="_blank">Alaska</a>・<a href="v2-images/hs_GL3_ww3_IC4M2_IS1_EC.gif" target="_blank">East Coast of the US</a>・<a href="v2-images/hs_GL3_ww3_IC4M2_IS1_CJ.gif" target="_blank">CJ</a></p>
+<!--<img src="v2-images/hs_GL3_ww3_IC4M2_IS1.gif" alt="hs-ww3" class="inline"/>
+<a  href="v2-images/hs_GL3_ww3_IC4M2_IS1_AK.gif"><img src="v2-images/hs_GL3_ww3_IC4M2_IS1.gif"/></a>-->
+<!--A zoom in view is provided for the Alaska area by clicking on the following forecast animation.-->
+<img src="v2-images/hs_GL3_ww3_IC4M2_IS1.gif" width="1100" alt="hs_ww3" usemap="#mapname2">
+<map name="mapname2">
+    <area shape="rect" coords="360,74,484,17" href="v2-images/hs_GL3_ww3_IC4M2_IS1_AK.gif" alt="Alaska">
+    <area shape="rect" coords="576,137,643,97" href="v2-images/hs_GL3_ww3_IC4M2_IS1_EC.gif" alt="East coast">
+    <area shape="rect" coords="254,140,351,72" href="v2-images/hs_GL3_ww3_IC4M2_IS1_CJ.gif" alt="China-Japan">
+</map>
+The following 5 day forecast result of significant wave height is using the operational high resolution unstructured mesh and the WW3, 
+the open ocean boundary wave conditions were forced from the global operational model. 
+<img src="v2-images/hs_ww3_mesh4_5days.gif" alt="RSG" class="inline"/>
+
+<h2>9. Global GFS-FV3 wind speed, Global ADICIRC surface water elevation (5 day forecast) and maximum surface elevation for the 5 day forecast period</h2>
+<p>Global finite element mesh(GESTOFS v4.1.4 model, the same global model using at <a href="https://cera.coastalrisk.live/" target="_blank">https://cera.coastalrisk.live</a>): 8,452,486 nodes, 16,226,163 elements; compuational time step: 12s; 
+computational wallclock time: about 2h30min by using 240 cores for 5 day forecast.</p>
+<img src="v2-images/gl_wind_speed_5days.gif"  alt="ws" class="inline"/>  
+<img src="v2-images/gl_eta_5days.gif"  alt="ws" class="inline"/>  
+<img src="v2-images/MAXE_GL_0001.jpg" alt="hi" class="inline"/> 
+
+<h2>10. Comparison with stations and buoys</h2>  
+<p>NOTES: The water level compared to stations includes 5 day hindcast and 5 day forecast.
+The positions of stations are showed in the following figure.
+The red 'x' marks indicate NOAA stations(except the data of St. Michael from JOA Surveys, LLC) are used to compare water level, 
+the green '+' mark indicates the station without observational data, 
+and the blue 'o' marks indicate NDBC buoys are used to compare significant wave height.
+<u> You can jump to the comparison with each station by clicking on the marker of the following map</u>.</p>
+<!--<img src="images/gauges_position.png" alt="nm" class="inline"/>-->
+<img src="v2-images/stations29.png" alt="stationsmap" usemap="#gaugemap">
+<map name="gaugemap">
+  <area shape="circle" coords="427,170,15" alt="nome" href="v2-images/ALCOFS-R2020_stna01.png">
+  <area shape="circle" coords="442,138,15" alt="rdd" href="v2-images/ALCOFS-R2020_stna02.png">
+  <area shape="circle" coords="610,110,15" alt="pb" href="v2-images/ALCOFS-R2020_stna03.png">
+  <area shape="circle" coords="489,176,15" alt="un" href="v2-images/ALCOFS-R2020_stna04.png">
+  <area shape="circle" coords="373,250,15" alt="sp" href="v2-images/ALCOFS-R2020_stna05.png">
+  <area shape="circle" coords="462,195,15" alt="sm" href="v2-images/ALCOFS-R2020_stna06.png">
+  <area shape="circle" coords="302,308,15" alt="ad" href="v2-images/ALCOFS-R2020_stna07.png">
+  <area shape="circle" coords="579,211,15" alt="ni" href="v2-images/ALCOFS-R2020_stna08.png">
+  <area shape="circle" coords="753,224,15" alt="sk" href="v2-images/ALCOFS-R2020_stna09.png">
+  <area shape="circle" coords="596,204,15" alt="an" href="v2-images/ALCOFS-R2020_stna10.png">
+  <area shape="circle" coords="705,223,15" alt="yb" href="v2-images/ALCOFS-R2020_stna11.png">
+  <area shape="circle" coords="752,250,15" alt="si" href="v2-images/ALCOFS-R2020_stna12.png">
+  <area shape="circle" coords="463,227,15" alt="kb" href="v2-images/ALCOFS-R2020_Kuskokwim.png">
+  <area shape="circle" coords="617,261,15" alt="b1" href="v2-images/HS_46001.png">
+  <area shape="circle" coords="293,253,15" alt="b2" href="v2-images/HS_46035.png">
+  <area shape="circle" coords="540,298,15" alt="b3" href="v2-images/HS_46066.png">
+  <area shape="circle" coords="213,275,15" alt="b4" href="v2-images/HS_46070.png">
+  <area shape="circle" coords="278,317,15" alt="b5" href="v2-images/HS_46071.png">
+  <area shape="circle" coords="354,310,15" alt="b6" href="v2-images/HS_46072.png">
+  <area shape="circle" coords="355,274,15" alt="b7" href="v2-images/HS_46073.png">
+  <area shape="circle" coords="477,285,15" alt="b8" href="v2-images/HS_46075.png">
+  <area shape="circle" coords="549,243,15" alt="b9" href="v2-images/HS_46077.png">
+  <area shape="circle" coords="566,268,15" alt="b10" href="v2-images/HS_46078.png">
+  <area shape="circle" coords="594,242,15" alt="b11" href="v2-images/HS_46080.png">
+  <area shape="circle" coords="610,211,15" alt="b12" href="v2-images/HS_46081.png">
+  <area shape="circle" coords="667,223,15" alt="b13" href="v2-images/HS_46082.png">
+  <area shape="circle" coords="725,239,15" alt="b14" href="v2-images/HS_46083.png">
+  <area shape="circle" coords="745,256,15" alt="b15" href="v2-images/HS_46084.png">
+  <area shape="circle" coords="672,265,15" alt="b16" href="v2-images/HS_46085.png">
+</map>
+
+<h3>Sitka Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9451600" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9451600</a></p>
+<p>The black line is the observational data, the blue line is the hindcast results, 
+the red line is the forecast results.</p>
+<img src="v2-images/ALCOFS-R2020_stna12.png" alt="si" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna12.png" alt="si" class="inline"/>
+
+<h3>Skagway Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9452400" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9452400</a></p>
+<img src="v2-images/ALCOFS-R2020_stna09.png" alt="sk" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna09.png" alt="sk" class="inline"/>
+
+<h3>Yakutat Bay Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9453220" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9453220</a></p>
+<img src="v2-images/ALCOFS-R2020_stna11.png" alt="yb" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna11.png" alt="yb" class="inline"/>
+
+<h3>Anchorage Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9455920" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9455920</a></p>
+<img src="v2-images/ALCOFS-R2020_stna10.png" alt="an" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna10.png" alt="an" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna10.png" alt="an" class="inline"/>
+
+<h3>Nikiski Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9455760" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9455760</a></p>
+<!--The observation data for this station is currently unavailable.-->
+<img src="v2-images/ALCOFS-R2020_stna08.png" alt="ni" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna08.png" alt="ni" class="inline"/>
+
+<h3>Adak Island Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9461380" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9461380</a></p>
+<img src="v2-images/ALCOFS-R2020_stna07.png" alt="ad" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna07.png" alt="ad" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna07.png" alt="ad" class="inline"/>
+
+<h3>Village Cove, St Paul Island Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9464212" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9464212</a></p>
+<img src="v2-images/ALCOFS-R2020_stna05.png" alt="sp" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna05.png" alt="sp" class="inline"/>
+
+<h3>St. Michael Station</h3>
+<p>Gauge data is from JOA Surveys, LLC (<a href="http://joasurveys.com/rtwl/stmichael/" target="_blank">http://joasurveys.com/rtwl/stmichael/</a>), without filtering. </p>
+<p>The real time water levels derived by Global Navigation Satellite System Reflectometry (GNSS-R) based tide gauge (AT01) in St. Michael, refer to <a href="https://www.gpsworld.com/a-tidal-shift-monitoring-sea-level-in-the-arctic-using-gnss/"target="_blank">https://www.gpsworld.com/a-tidal-shift-monitoring-sea-level-in-the-arctic-using-gnss/</a>.</p>
+<img src="v2-images/ALCOFS-R2020_stna06.png" alt="hi" class="inline"/>  
+
+<h3>Unalakleet Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9468333" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9468333</a></p>
+<p>Note that the Unalakleet station (ID 9468333) is located within an inlet near the mouth of Unalakleet River. The inlet itself is quite narrow (75m). We have noted during both winter and summer months significant unexplained variability in high tides and especially in low tides in the recorded signal, with low tides being limited. We suspect that shoal formation in the vicinity of the inlet and possibly ice formation at the inlet mouth significantly impact the measured tidal signal at the station. </p>
+<!--<p>For the error analysis statistics at this station, please click <a href="images/UN_error_statistic.jpg" target="_blank">here</a>.</p>-->
+<img src="v2-images/ALCOFS-R2020_stna04.png" alt="un" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna04.png" alt="un" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna04.png" alt="un" class="inline"/>
+
+<h3>Nome Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9468756" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9468756</a>.</p>
+<!--<p>For the error analysis statistics at this station, please click <a href="images/Nome_error_statistic.jpg" target="_blank">here</a>.</p>-->
+<img src="v2-images/ALCOFS-R2020_stna01.png" alt="nm" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna01.png" alt="nm" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna01.png" alt="nm" class="inline"/>
+
+<h3>Red Dog Dock Station</h3>
+<!--<p>The station is currently broken.</p>-->
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9491094" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9491094</a></p>
+<!--<p>For the error analysis statistics at this station, please click <a href="images/RDD_error_statistic.jpg" target="_blank">here</a>.</p>-->
+<img src="v2-images/ALCOFS-R2020_stna02.png" alt="rdd" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna02.png" alt="rdd" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna02.png" alt="rdd" class="inline"/>
+
+<h3>Prudhoe Bay Station</h3>
+<p><a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=9497645" target="_blank">https://tidesandcurrents.noaa.gov/stationhome.html?id=9497645</a></p>
+<!--<p>For the error analysis statistics at this station, please click <a href="images/PB_error_statistic.jpg" target="_blank">here</a>.</p>-->
+<img src="v2-images/ALCOFS-R2020_stna03.png" alt="pb" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-pres_stna03.png" alt="pb" class="inline"/>
+<img src="v2-images/ALCOFS-R2020-wind_stna03.png" alt="pb" class="inline"/>
+
+<h3>Kuskokwim Bay (5 day forecast)</h3>
+<p>Location:-162.0293, 59.3780.</p>
+<img src="v2-images/ALCOFS-R2020_Kuskokwim.png" alt="pb" class="inline"/>
+
+<h3>NDBC buoy 46001: Western Gulf of Alaska</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46001" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46001</a></p>
+<img src="v2-images/HS_46001.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46001.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46035: Central Bering Sea</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46035" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46035</a></p>
+<img src="v2-images/HS_46035.png" alt="b2" class="inline"/>
+<img src="v2-images/Wind_46035.png" alt="w2" class="inline"/>
+
+<h3>NDBC buoy 46066: South Kodiak</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46066" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46066</a></p>
+<img src="v2-images/HS_46066.png" alt="b3" class="inline"/>
+<img src="v2-images/Wind_46066.png" alt="w3" class="inline"/>
+
+<h3>NDBC buoy 46070: Southwest Bering Sea</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46070" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46070</a></p>
+<img src="v2-images/HS_46070.png" alt="b4" class="inline"/>
+<img src="v2-images/Wind_46070.png" alt="w4" class="inline"/>
+
+<h3>NDBC buoy 46071: Western Aleutians</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46071" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46071</a></p>
+<img src="v2-images/HS_46071.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46071.png" alt="b1" class="inline"/>
+
+<h3>NDBC buoy 46072: Central Aleutians</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46072" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46072</a></p>
+<img src="v2-images/HS_46072.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46072.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46073: Southeast Bering Sea</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46073" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46073</a></p>
+<img src="v2-images/HS_46073.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46073.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46075: Shumagin Islands</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46075" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46075</a></p>
+<img src="v2-images/HS_46075.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46075.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46077: Shelikof Strait</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46077" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46077</a></p>
+<img src="v2-images/HS_46077.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46077.png" alt="b1" class="inline"/>
+
+<h3>NDBC buoy 46078: Albatross Bank</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46078" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46078</a></p>
+<img src="v2-images/HS_46078.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46078.png" alt="b1" class="inline"/>
+
+<h3>NDBC buoy 46080: Portlock Bank</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46080" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46080</a></p>
+<img src="v2-images/HS_46080.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46080.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46081: Western Prince William Sound</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46081" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46081</a></p>
+<img src="v2-images/HS_46081.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46081.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46082: Cape Suckling</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46082" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46082</a></p>
+<img src="v2-images/HS_46082.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46082.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46083: Fairweather Grounds 105 NM West of Juneau</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46083" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46083</a></p>
+<img src="v2-images/HS_46083.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46083.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46084: Cape Edgecumbe</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46084" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46084</a></p>
+<img src="v2-images/HS_46084.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46084.png" alt="w1" class="inline"/>
+
+<h3>NDBC buoy 46085: Central Gulf of Alaska</h3>
+<p><a href="https://www.ndbc.noaa.gov/station_page.php?station=46085" target="_blank">https://www.ndbc.noaa.gov/station_page.php?station=46085</a></p>
+<img src="v2-images/HS_46085.png" alt="b1" class="inline"/>
+<img src="v2-images/Wind_46085.png" alt="w1" class="inline"/>
+
+<h2>11. Overview of the forecasting system</h2>
+<p>The western coast of Alaska has experienced a number of storm surge events (<a href="https://slosh.nws.noaa.gov/docs/Shaffer1997StormSurgesInTheRegion.pdf" target="_blank">[1]</a>, <a href="https://www.commerce.alaska.gov/web/Portals/4/pub/2009_USACE_Storm_Damage_Flooding_Evaluation.pdf" target="_blank">[2]</a>). In order to predict the water level around the western coast of Alaska, we developed this high resolution and continuously forecasting system. In this system, the <a href="https://adcirc.org/" target="_blank">ADCIRC [3]</a> storm surge model acts as a main engine and incorporated air-sea-ice drag parameterization, which aim at higher accuracy for predicting water level during winter storm by considering sea ice coverage. For more detail about air-sea-ice drag parameterization, please refer to [5], [6], <a href="https://ams.confex.com/ams/2020Annual/webprogram/Paper370912.html" target="_blank">[7]</a>.</p>
+<h2>12. Flowchart of the forecasting system</h2>
+<p>Fig.1 shows the flowchart for this forecasting system. 
+In order to get a high quality initial condition to start the forecast, on the first day of the forecast simulation, 
+we did a 12 days hindcast including 5 days spin up by using GFS reanalysis products (<a href="https://www.ncei.noaa.gov/data/global-forecast-system/access/grid-004-0.5-degree/analysis/" target="_blank">https://www.ncei.noaa.gov/data/global-forecast-system/access/grid-004-0.5-degree/analysis/</a>) for 10 days and GFS forecast products (<a href="https://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/" target="_blank">https://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/</a>) for 2 days, after the 12 days hindcast, 
+the forecast system goes into a daily loop simulation for 6 days including 1 day hindcast(green day in Fig.1) and 5 days forecast(blue days in Fig.1) using GFS forecast products.
+In Fig.1, the red 1d indicates the present day.
+</p>
+<figure>
+<img src="v2-images/flowchart-v2.png" alt="hi" class="inline"/> 
+<figcaption>Fig.1 - Flowchart</figcaption>
+</figure>
+<h2>13. Mesh with floodplain (nodes: 1,648,088; elements: 3,211,583)</h2>
+<p>The mesh showed in Fig.2 is generated by using <a href="https://github.com/CHLNDDEV/OceanMesh2D" target="_blank">OceanMesh2D</a>.</p>
+<p>Fig.3 shows the mesh resolution, for the parameters of ocean side mesh used in the OceanMesh2D:<br />
+min_el=1000, max_el=20000, wl=300, dt=2, grade=0.2, R=2, slp=20, dis=0.35, max_el_ns=1000, 
+and several specify bounding boxes for bays and inlets (Cook Inlet, Bristol Bay, Aleutian Islands, Kotzebue Sound, St. Lawrence Island) are set for min_el=200.<br />
+For the floodplain side, there are two floodplains in the mesh, 
+the first one is located at the north of Alaska, the second one is at Yukon Delta:<br />
+for the first one min_el=200, the second one min_el=100 and the other parameters are set the same as ocean side. 
+</p>
+<!--<a href="https://portal.nccs.nasa.gov/datashare/g6dev/BMNG/" target="_blank">topo15_compressed.nc</a>-->
+<!--as a background bathymetry and interpolated the '<a href="https://catalog.data.gov/dataset/southern-alaska-coastal-relief-model" target="_blank">crm_southak.nc</a>' in the red line polygon showed in Fig.4.  -->
+<p>For the bathymetry data, we blended the <a href="https://www.gebco.net/data_and_products/gridded_bathymetry_data/" target="_blank">GEBCO2020</a>, the <a href="https://www.fisheries.noaa.gov/alaska/ecosystems/alaska-bathymetry-sediments-and-smooth-sheets/" target="_blank">Smooth Sheet bathymetry</a> of Aleutian Islands, Cook Inlet, Central Gulf of Alaska, Norton Sound, and the <a href="https://catalog.data.gov/dataset/southern-alaska-coastal-relief-model" target="_blank">Southern Alaska Coastal Relief Model(CRM)</a> bathymetry around Lynn Canal area. 
+In the Fig.4, the dark green areas above 0 meter are flood plains.
+</p>
+<figure>
+<img src="images/mesh4_fp_v2.png" alt="hi" class="inline"/> 
+<figcaption>Fig.2 - Unstructured triangular finite element meshes</figcaption>
+</figure>
+<figure>
+<img src="images/mesh4-fp-v2-resoearthlog.png" alt="hi" class="inline"/>
+<figcaption>Fig.3 - Mesh resolution</figcaption>
+</figure>
+<figure>
+<img src="v2-images/mesh4-fp-v12-bathymetry.png" alt="hi" class="inline"/>
+<figcaption>Fig.4 - Bathymetry</figcaption>
+</figure>
+<h2>14. Forcing boundary conditions and simulation conditions</h2>
+<p>8 tidal harmonic constituents are forcing on the open ocean boundaries, <br />
+4 semi-diurnal: M2, N2, S2, K2; <br />
+4 diurnal: K1, Q1, O1, P1. <br />
+The simulation is based on air-sea-ice drag parameterization incorporated <a href="https://adcirc.org/" target="_blank">ADCIRC</a> ver. 55, the following are some settings for the parameters in ADCIRC. <br />
+ICS=-22, IM=511112, NTIP=2, TAU0=-3, DTDP=2, NTIF=8, NWS=14 (w/o ice), NWS=14014 (w/ ice), NWS=14314 (w/ ice&SWAN)...
+</p>
+
+<h2>15. References </h2> 
+<p>
+<ol>
+  <li>W. Blier, S. Keefe, W.A. Shaffer and S.C. Kim: Storm Surges in the Region of Western Alaska, Monthly Weather Review, Vol.125, 1997.</li>
+  <li>R.S. Chapman, S.C. Kim and D.J. Mark: Storm-Induced Water Level Prediction Study for the Western Coast of Alaska, ERDC/CHL Letter Report, 2009.</li>
+  <li>ADCIRC: <a href="https://adcirc.org/" target="_blank">https://adcirc.org/</a>.</li>
+  <li>SWAN+ADCIRC: <a href="https://ccht.ccee.ncsu.edu/swanadcirc/" target="_blank">https://ccht.ccee.ncsu.edu/swanadcirc/</a>.</li>
+  <li>Brian R. Joyce, William J. Pringle, Damrongsak Wirasaet, Joannes J. Westerink, Andre J. Van der Westhuysen, Robert Grumbine, Jesse Feyenc: High resolution modeling of western Alaskan tides and storm surge under varying sea ice conditions, Ocean Modelling, Vol.141, 101421, 2019.</li>
+  <li>Christof Lüpkes, Vladimir M. Gryanik, Jörg Hartmann, and Edgar L Andreas: A parametrization, based on sea ice morphology, of the neutral atmospheric drag coefficients for weather prediction and climate models, Journal of Geophysical Research, Vol.117, D13112, 2012.</li>
+  <li>G. Ling, D. Wirasaet, J. Westerink, D. H. Richter, B. Joyce, W. Pringle, M. T. Contreras Vargas, K. R. Steffen, C. N. Dawson, A. Fujisaki-Manome, E. Myers, S. Moghimi, S. V. Vinogradov, A. Van der Westhuysen, A. Abdolali, and R. Grumbine: Studies on Parameterizations of Sea Ice Effect in a Storm Surge Model for Western Alaska, <p><a href="https://ams.confex.com/ams/2020Annual/webprogram/Paper370912.html" target="_blank">https://ams.confex.com/ams/2020Annual/webprogram/Paper370912.html</a>, AMS, 2020.</p></li>
+  <li>C.O. Collins and W.E. Rogers, A Source Term for Wave Attenuation by Sea ice in WAVEWATCH III ®: IC4, NRL Report NRL/MR/7320--17-9726, 2017.</li>
+  <li>M.H. Meylan, L.G. Bennette and A.L. Kohout: In situ measurements and analysis of ocean waves in the Antarcticmarginal ice zone, Geophysical Research Letters, Vol.41(14), pp. 5046–5051, 2014.</li>
+  <li>GLOCOFFS (GLObal Coastal Ocean Flood Forecasting System): <a href="https://wpringle.github.io/GLOCOFFS/" target="_blank">https://wpringle.github.io/GLOCOFFS/</a>.</li>
+</ol>
+</p>
+<h2>Acknowledgement</h2> 
+This work is being supported by National Oceanic and Atmospheric Administration (NOAA) for the Alaska Coastal Ocean Forecast System (ALCOFS) project.
+The author acknowledge Prof. Joannes J. Westerink, for the patient guidance, encouragement and advice, Dr. Damrongsak Wirasaet for a lot of ideas and help, 
+and thanks to the members of <a href="https://coast.nd.edu/index.html" target="_blank">Computational Hydraulics Laboratory</a> at the University of Notre Dame for fruitful discussions.
+</body>
+
+<!--<footer>
+  <p><a href="https://github.com/GM-Ling/AKSSFS">AKSSFS</a> is maintained by: Guoming Ling</p>
+  <p>This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+</footer>-->
+</html>
